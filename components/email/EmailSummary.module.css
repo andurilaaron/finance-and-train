@@ -1,0 +1,88 @@
+.container {
+    margin-bottom: var(--spacing-lg);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.header h2 {
+    margin: 0;
+    font-size: var(--font-size-2xl);
+}
+
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--spacing-2xl);
+}
+
+.summaryCard {
+    margin-bottom: var(--spacing-md);
+    background: var(--gradient-accent);
+    border: none;
+}
+
+.summary {
+    margin: 0;
+    color: white;
+    font-weight: 600;
+    text-align: center;
+}
+
+.emails {
+    display: grid;
+    gap: var(--spacing-sm);
+}
+
+.emailCard {
+    padding: var(--spacing-md);
+    animation: slideUp 0.3s ease-out;
+    cursor: pointer;
+}
+
+.emailCard.unread {
+    border-left: 3px solid var(--primary);
+}
+
+.emailHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-xs);
+}
+
+.from {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+}
+
+.subject {
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    margin-bottom: var(--spacing-xs);
+    color: var(--text-primary);
+}
+
+.snippet {
+    font-size: var(--font-size-sm);
+    color: var(--text-tertiary);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    .emailHeader {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-xs);
+    }
+}

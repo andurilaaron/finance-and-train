@@ -1,0 +1,240 @@
+.container {
+    margin-bottom: var(--spacing-lg);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--spacing-md);
+}
+
+.header h2 {
+    margin: 0;
+    font-size: var(--font-size-2xl);
+}
+
+.subtitle {
+    font-size: var(--font-size-sm);
+    color: var(--text-tertiary);
+    margin: var(--spacing-xs) 0 0 0;
+}
+
+.counts {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--spacing-2xl);
+}
+
+.filters {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+    overflow-x: auto;
+    padding-bottom: var(--spacing-xs);
+}
+
+.filterBtn {
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    color: var(--text-primary);
+    font-family: var(--font-family);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    white-space: nowrap;
+}
+
+.filterBtn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.filterBtn.active {
+    background: var(--gradient-primary);
+    border-color: transparent;
+    color: white;
+}
+
+.emails {
+    display: grid;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.emailCard {
+    padding: var(--spacing-lg);
+    cursor: default;
+}
+
+.emailCard.unread {
+    border-left: 3px solid var(--primary);
+}
+
+.emailHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-sm);
+}
+
+.emailMeta {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.sourceBadge {
+    font-size: var(--font-size-xs);
+    padding: 2px var(--spacing-xs);
+}
+
+.from {
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.attachment {
+    font-size: var(--font-size-sm);
+}
+
+.time {
+    font-size: var(--font-size-xs);
+    color: var(--text-tertiary);
+}
+
+.subject {
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    margin-bottom: var(--spacing-xs);
+    color: var(--text-primary);
+}
+
+.snippet {
+    font-size: var(--font-size-sm);
+    color: var(--text-tertiary);
+    margin-bottom: var(--spacing-md);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.aiSuggestion {
+    background: hsla(var(--primary-hue), 85%, 65%, 0.1);
+    border: 1px solid hsla(var(--primary-hue), 85%, 65%, 0.2);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+}
+
+.aiLabel {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    margin-bottom: var(--spacing-xs);
+}
+
+.aiIcon {
+    font-size: var(--font-size-base);
+}
+
+.aiReason {
+    font-size: var(--font-size-xs);
+    color: var(--text-tertiary);
+    font-style: italic;
+}
+
+.actions {
+    display: flex;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+}
+
+.empty {
+    text-align: center;
+    padding: var(--spacing-2xl);
+}
+
+.empty h3 {
+    margin: 0 0 var(--spacing-sm) 0;
+    font-size: var(--font-size-2xl);
+}
+
+.empty p {
+    margin: 0;
+    color: var(--text-secondary);
+}
+
+.progressCard {
+    background: var(--gradient-primary);
+    border: none;
+    color: white;
+}
+
+.progressHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-sm);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+}
+
+.progressCount {
+    opacity: 0.9;
+}
+
+.progressBar {
+    width: 100%;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+}
+
+.progressFill {
+    height: 100%;
+    background: white;
+    border-radius: var(--radius-sm);
+    transition: width var(--transition-slow);
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+
+    .counts {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .emailHeader {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-xs);
+    }
+
+    .actions {
+        flex-direction: column;
+    }
+
+    .actions button {
+        width: 100%;
+    }
+}

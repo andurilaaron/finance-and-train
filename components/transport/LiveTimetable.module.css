@@ -1,0 +1,121 @@
+.container {
+    margin-bottom: var(--spacing-lg);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.header h2 {
+    margin: 0;
+    font-size: var(--font-size-2xl);
+}
+
+.stationSelect {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-sm) var(--spacing-md);
+    color: var(--text-primary);
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    cursor: pointer;
+    transition: all var(--transition-base);
+}
+
+.stationSelect:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.stationSelect:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--spacing-2xl);
+}
+
+.departures {
+    display: grid;
+    gap: var(--spacing-sm);
+}
+
+.departureCard {
+    padding: var(--spacing-md);
+    animation: slideUp 0.3s ease-out;
+}
+
+.departureInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.route {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.destination {
+    font-size: var(--font-size-base);
+    color: var(--text-secondary);
+}
+
+.time {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.countdown {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    min-width: 80px;
+    text-align: right;
+}
+
+.noDepartures {
+    text-align: center;
+    padding: var(--spacing-xl);
+    color: var(--text-tertiary);
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-sm);
+    }
+
+    .stationSelect {
+        width: 100%;
+    }
+
+    .departureInfo {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-sm);
+    }
+
+    .time {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .countdown {
+        text-align: left;
+    }
+}

@@ -1,0 +1,134 @@
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 240px;
+    background: var(--bg-secondary);
+    border-right: 1px solid var(--glass-border);
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+    transform: translateX(-100%);
+    transition: transform var(--transition-base);
+}
+
+.sidebar.open {
+    transform: translateX(0);
+    box-shadow: var(--shadow-lg);
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    animation: fadeIn 0.2s ease-out;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-xl) var(--spacing-lg);
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.logoIcon {
+    font-size: var(--font-size-2xl);
+}
+
+.logoText {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.nav {
+    flex: 1;
+    padding: var(--spacing-lg) 0;
+    overflow-y: auto;
+}
+
+.navItem {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md) var(--spacing-lg);
+    background: transparent;
+    border: none;
+    border-left: 3px solid transparent;
+    color: var(--text-secondary);
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    text-align: left;
+}
+
+.navItem:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-primary);
+}
+
+.navItem.active {
+    background: rgba(var(--primary-hue), 85%, 65%, 0.1);
+    border-left-color: var(--primary);
+    color: var(--text-primary);
+}
+
+.navIcon {
+    font-size: var(--font-size-xl);
+    width: 24px;
+    text-align: center;
+}
+
+.navLabel {
+    flex: 1;
+}
+
+.footer {
+    padding: var(--spacing-lg);
+    border-top: 1px solid var(--glass-border);
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.userAvatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--gradient-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: var(--font-size-sm);
+    color: white;
+}
+
+.userName {
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+/* Desktop: Always show sidebar */
+@media (min-width: 1025px) {
+    .sidebar {
+        transform: translateX(0);
+    }
+
+    .overlay {
+        display: none;
+    }
+}
